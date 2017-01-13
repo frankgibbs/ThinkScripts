@@ -11,8 +11,8 @@ def crossunder = if close < movAvgWeighted and close[1] >= movAvgWeighted[1] the
 #Plot arrows
 plot up = if crossover then low - TickSize() else na;
 plot down = if crossunder then high + TickSize() else na;
-up.SetPaintingStrategy(PaintingStrategy.ARROW_UP);
-down.SetPaintingStrategy(PaintingStrategy.ARROW_DOWN);
+up.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+down.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);
 
 #Trigger alerts
 Alert(crossover[1], "Crossover", Alert.BAR, Sound.Ding);
